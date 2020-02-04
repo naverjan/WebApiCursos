@@ -41,6 +41,20 @@ namespace WebApiCursos.Controllers
             return course;
         }
 
+        /*Consulta de curso por palabra*/
+        [HttpGet("search/{search}")]
+
+        public async Task<ActionResult<IEnumerable<Course>>> GetCourseByTerm(string search) {
+            
+            //var course = await _context.Courses.Where(c => c.Name.ToLowerInvariant().Contains(search.ToLowerInvariant())).ToListAsync();
+            var course = await _context.Courses.Where(c => c.Name.Contains(search)).ToListAsync();            
+            if (course == null) {
+                return NotFound();
+            }
+
+            return course;
+        }
+
         // PUT: api/Courses/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
