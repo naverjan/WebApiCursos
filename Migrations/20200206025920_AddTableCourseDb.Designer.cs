@@ -9,7 +9,7 @@ using WebApiCursos.Models;
 namespace WebApiCursos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200121170110_AddTableCourseDb")]
+    [Migration("20200206025920_AddTableCourseDb")]
     partial class AddTableCourseDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
